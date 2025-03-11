@@ -6,6 +6,7 @@
 	--main-decor-color:#00a9e2;
     --main-header-background:#21252e;
 	--main-font-family: 'Poppins', sans-serif;
+	--accent-color: #4CAF50; /* Added new accent color for resume section */
 }
 
 *{
@@ -21,9 +22,6 @@ main{
 	background: var(--main-background);
 }
 
-/*────────────────── 
-       header
-──────────────────*/
 
 header{
 	margin: 0 auto;
@@ -77,10 +75,6 @@ a.nav-link{
 	color: #000000;
     background: var(--main-decor-color);
 }
-
-/*──────────────────
-       home
-──────────────────*/
 
 #home{ 	
 	margin: auto;
@@ -228,9 +222,83 @@ a.nav-link{
 	box-shadow: 0 0 1.5rem gray;
 }
 
-/*──────────────────
-      Contact
-──────────────────*/
+/*Resume Section
+*/
+
+#resume {
+	margin-top: 50px;
+	padding: 60px 0;
+	height: 300px; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: var(--main-fonts-color);
+}
+
+#resume h3 {
+	padding-top: 40px;
+}
+
+#resume p {
+	font-family: var(--main-font-family);
+	font-size: 1.2rem;
+	padding: 15px;
+	max-width: 800px; 
+}
+
+.resume-btn {
+	margin-top: 20px;
+	padding: 12px 30px;
+	background: var(--accent-color);
+	color: var(--main-fonts-color);
+	border: none;
+	border-radius: 5px;
+	font-family: var(--main-font-family);
+	font-size: 1.1rem;
+	text-decoration: none;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.resume-btn:hover {
+	background: #45a049;
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.resume-btn:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add shine effect on hover */
+.resume-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	transform: skewX(-25deg);
+	transition: 0.5s;
+}
+
+.resume-btn:hover::before {
+	left: 100%;
+}
+
 
 #contact{
 	margin: auto;
@@ -250,9 +318,6 @@ a.nav-link{
 	font-family: var(--main-font-family);
 }
 
-/*────────────────── 
-       footer
-──────────────────*/
 
 footer {
 	width: 100%;
@@ -278,7 +343,7 @@ footer {
 	color: var(--main-decor-color);
 }
 
-/*──── hr ─────*/
+
 
 hr {
     background: var(--main-decor-color);
@@ -291,9 +356,7 @@ hr {
     margin-inline-end: auto;
 }
 
-/*────────────────── 
-     Scrollbar
-──────────────────*/
+
 ::-webkit-Scrollbar{
     width: 5px; 
 	background: rgba(5,5,5,1);
@@ -308,9 +371,7 @@ hr {
 	border-radius: 10px;
 }
 
-/*────────────────── 
-     hamburger
-──────────────────*/
+
 .hamburger {
 	display: none;
 }
@@ -346,9 +407,7 @@ hr {
 	}
 }
 
-/*────────────────── 
-    media queries
-──────────────────*/
+
 
 @media only screen and (max-width: 1484px) and (min-width: 1214px) {
 	.work{
@@ -364,7 +423,7 @@ hr {
 
 @media only screen and (max-width: 500px) {
 
-	#home, #projects, #contact{
+	#home, #projects, #contact, #resume{
         overflow-x: hidden;
 	}
 	header{
@@ -404,6 +463,15 @@ hr {
 	.nav-bar li{
 		opacity:0;
 	}
+	
+	#resume h3 {
+		font-size: 40px;
+	}
+	
+	.resume-btn {
+		padding: 10px 25px;
+		font-size: 1rem;
+	}
 }
 
 .nav-active{
@@ -415,4 +483,18 @@ hr {
 	background-origin: padding-box;
 	text-transform: capitalize;
 	text-shadow: greenyellow;
+}
+.image-center-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px; 
+	background-color: #9f9999; 
+	padding: 20px; 
+}
+  
+.image-center-top img {
+	max-width: 100%;
+	height: auto;
+	background-color: #aaa3a3; 
 }
